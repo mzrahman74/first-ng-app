@@ -1,3 +1,9 @@
-@for(todo of todoItem(); track $index) {
-<p>{{ todo.title }}</p>
-}
+<h3>Todos List</h3>
+<ul class="todo">
+  @for(todo of todoItem(); track $index) {
+  <li class="todos__item">
+    <input id="todo-{{ todo.id }}" type="checkbox" [value]="todo.completed" />
+    <label for="todo-{{ todo.id }}">{{ todo.title }}</label>
+  </li>
+  }
+</ul>
