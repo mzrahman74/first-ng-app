@@ -1,4 +1,7 @@
 <h3>Todos List</h3>
+@if(!todoItem().length) {
+<p>Loading.....</p>
+}
 <ul class="todo">
   @for(todo of todoItem(); track $index) {
   <li class="todos__item">
