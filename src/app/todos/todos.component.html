@@ -3,10 +3,7 @@
 <p>Loading.....</p>
 }
 <ul class="todo">
-  @for(todo of todoItem(); track $index) {
-  <li class="todos__item">
-    <input id="todo-{{ todo.id }}" type="checkbox" [value]="todo.completed" />
-    <label for="todo-{{ todo.id }}">{{ todo.title }}</label>
-  </li>
+  @for(todo of todoItem(); track todo.id) {
+  <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
   }
 </ul>
